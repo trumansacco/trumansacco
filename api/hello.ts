@@ -6,4 +6,4 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     method: req.method,
     timestamp: new Date().toISOString(),
   });
-}//
+}
