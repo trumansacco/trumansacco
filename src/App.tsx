@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   const [message, setMessage] = useState("Loading backend...")
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+      <Analytics />
       <Card className="w-full max-w-xl">
         <CardHeader>
           <CardTitle>React + TypeScript + Node on Vercel</CardTitle>
