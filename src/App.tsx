@@ -1,30 +1,45 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 function App() {
-  const [message, setMessage] = useState("Loading backend...");
+  const [message, setMessage] = useState("Loading backend...")
 
   useEffect(() => {
     async function fetchMessage() {
       try {
-        const response = await fetch("/api/hello");
-        const data = await response.json();
-
-        setMessage(data.message);
-      } catch (error) {
-        setMessage("Could not connect to backend");
+        const response = await fetch("/api/hello")
+        const data = await response.json()
+        setMessage(data.message)
+      } catch {
+        setMessage("Could not connect to backend")
       }
     }
 
-    fetchMessage();
-  }, []);
+    fetchMessage()
+  }, [])
 
   return (
-    <main>
-      <h1>React + TypeScript + Node on Vercel</h1>
-      <p>{message}</p>
+    <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+      <Card className="w-full max-w-xl">
+        <CardHeader>
+          <CardTitle>React + TypeScript + Node on Vercel</CardTitle>
+          <CardDescription>
+            Your frontend, backend, Tailwind, and shadcn setup is working.
+          </CardDescription>
+        </CardHeader>
+
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">Backend response:</p>
+          <p className="font-medium">{message}</p>
+
+          <Button onClick={() => window.open("/api/hello", "_blank")}>
+            Test API
+          </Button>
+        </CardContent>
+      </Card>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
