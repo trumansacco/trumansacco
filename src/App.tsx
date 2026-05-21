@@ -76,10 +76,6 @@ function App() {
           <CardContent className="space-y-4">
             <p className="text-sm text-muted-foreground">API response:</p>
             <p className="font-medium">{message}</p>
-
-            <Button onClick={() => window.open("/api/hello", "_blank")}>
-              Test API
-            </Button>
           </CardContent>
         </Card>
       </section>
