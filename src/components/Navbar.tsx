@@ -42,13 +42,6 @@ function Navbar() {
             </NavLink>
           ))}
         </div>
-
-        <NavLink
-          to="/contact"
-          className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
-        >
-          Contact Me
-        </NavLink>
       </div>
     </nav>
   )
