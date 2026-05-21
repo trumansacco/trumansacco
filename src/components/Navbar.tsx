@@ -18,6 +18,8 @@ function Navbar() {
             Contact
           </a>
         </div>
+
+        
       </div>
     </nav>
   )
