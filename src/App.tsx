@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import Navbar from "@/components/Navbar"
 import { Button } from "@/components/ui/button"
 import { Analytics } from "@vercel/analytics/react"
@@ -12,22 +11,6 @@ import {
 } from "@/components/ui/card"
 
 function App() {
-  const [message, setMessage] = useState("Loading backend...")
-
-  useEffect(() => {
-    async function fetchMessage() {
-      try {
-        const response = await fetch("/api/hello")
-        const data = await response.json()
-
-        setMessage(data.message)
-      } catch {
-        setMessage("Could not connect to backend")
-      }
-    }
-
-    fetchMessage()
-  }, [])
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -72,15 +55,6 @@ function App() {
             <CardDescription>Backend Status</CardDescription>
             <CardTitle>React + TypeScript + Node on Vercel</CardTitle>
           </CardHeader>
-
-          <CardContent className="space-y-4">
-            <p className="text-sm text-muted-foreground">API response:</p>
-            <p className="font-medium">{message}</p>
-
-            <Button onClick={() => window.open("/api/hello", "_blank")}>
-              Test API
-            </Button>
-          </CardContent>
         </Card>
       </section>
 
