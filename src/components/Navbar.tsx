@@ -15,7 +15,7 @@ function Navbar() {
             About
           </a>
           <a href="#contact" className="transition hover:text-foreground">
-            Contact
+            Contact Me
           </a>
         </div>
 
