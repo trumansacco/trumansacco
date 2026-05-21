@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Navbar from "@/components/Navbar"
 import { Button } from "@/components/ui/button"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   Card,
   CardContent,
@@ -31,6 +32,7 @@ function App() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Analytics />
+      <SpeedInsights />
       <Navbar />
 
       <section
