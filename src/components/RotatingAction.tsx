@@ -21,7 +21,7 @@ function RotatingAction() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((current) => (current + 1) % words.length)
-    }, 6000)
+    }, 3400)
 
     return () => clearInterval(interval)
   }, [])

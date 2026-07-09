@@ -1,6 +1,7 @@
 import { useLocation, useOutlet } from "react-router"
 import { AnimatePresence, motion } from "motion/react"
 import Navbar from "@/components/Navbar"
+import ScrollToHash from "@/components/ScrollToHash"
 
 function RootLayout() {
   const location = useLocation()
@@ -8,6 +9,7 @@ function RootLayout() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <ScrollToHash />
       <Navbar />
 
       <AnimatePresence mode="wait">

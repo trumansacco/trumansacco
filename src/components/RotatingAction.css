@@ -3,7 +3,7 @@
 .animated-text-pattern {
   color: transparent;
   background-image:
-    radial-gradient(circle at 20% 20%, #60a5fa 0 8%, transparent 9%),
+    radial-gradient(circle at 20% 20%, #60a5fa 0 8%, transparent 50%),
     linear-gradient(
       135deg,
       #60a5fa,
@@ -16,7 +16,7 @@
   background-position: 0% 0%, 0% 50%;
   background-clip: text;
   -webkit-background-clip: text;
-  animation: text-pattern-shift 15s ease-in-out infinite alternate;
+  animation: text-pattern-shift 5s ease-in-out infinite alternate;
 }
 
 @keyframes text-pattern-shift {
