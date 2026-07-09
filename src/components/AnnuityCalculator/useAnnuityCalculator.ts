@@ -115,23 +115,24 @@ export function useAnnuityCalculator() {
   }
 
   const rebuildDiscountTokens = () => {
-    const rebuiltTokens = discountTokensRef.current
-      .map((token) => {
-        const exponentRange = getRange(token.promptId)
+  const rebuiltTokens: DiscountToken[] = []
 
-        if (!exponentRange) return null
+  for (const token of discountTokensRef.current) {
+    const exponentRange = getRange(token.promptId)
 
-        return {
-          ...token,
-          exponentRange,
-        }
-      })
-      .filter((token): token is DiscountToken => token !== null)
-      .sort((a, b) => a.start - b.start)
+    if (!exponentRange) continue
 
-    discountTokensRef.current = rebuiltTokens
-    return rebuiltTokens
+    rebuiltTokens.push({
+      ...token,
+      exponentRange,
+    })
   }
+
+  rebuiltTokens.sort((a, b) => a.start - b.start)
+
+  discountTokensRef.current = rebuiltTokens
+  return rebuiltTokens
+}
 
   const rebuildAccumulationTokens = () => {
     const rebuiltTokens = accumulationTokensRef.current
